@@ -7,17 +7,11 @@ import spark.Request;
 import spark.Response;
 import spark.Route;
 
-public class ApiRoute extends Route
+public class ApiRoute extends UIRoute
 {
 
     public ApiRoute(){
-        this("/api/ip/:ip");
-    }
-
-    protected ApiRoute(String path)
-    {
-        super(path);
-        // TODO Auto-generated constructor stub
+        super("/api/ip/:ip");
     }
 
     @Override

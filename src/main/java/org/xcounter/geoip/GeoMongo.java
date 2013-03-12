@@ -12,7 +12,7 @@ public class GeoMongo
 {
 
     private DBCollection collection;
-    private String mongo_host = "127.0.0.1", db_name = "geoip.xcounter.org", collection_name = "cache";
+    private String mongo_host = "127.0.0.1", db_name = "geoip_xcounter_org", collection_name = "cache";
     private int mongo_port = 27017;
     
     private static GeoMongo instance;

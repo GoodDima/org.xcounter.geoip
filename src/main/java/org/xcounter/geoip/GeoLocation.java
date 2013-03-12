@@ -4,7 +4,7 @@ public class GeoLocation implements Comparable<GeoLocation>
 {
 
     private int id;
-    private String name;
+    private String name, country, postcode, region;
     private float lat, lon;
 
     public void setLon(float lon)
@@ -64,6 +64,36 @@ public class GeoLocation implements Comparable<GeoLocation>
     public String toString()
     {
         return this.name;
+    }
+
+    public String getCountry()
+    {
+        return country;
+    }
+
+    public void setCountry(String country)
+    {
+        this.country = country;
+    }
+
+    public String getPostcode()
+    {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode)
+    {
+        this.postcode = postcode;
+    }
+
+    public String getRegion()
+    {
+        return region;
+    }
+
+    public void setRegion(String region)
+    {
+        this.region = region;
     }
 
 }

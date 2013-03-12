@@ -8,7 +8,7 @@ public class JsonRoute extends Route
 {
 
     public JsonRoute(){
-        this("/api/:ip/json");
+        this("/api/ip/:ip/json");
     }
 
     protected JsonRoute(String path)

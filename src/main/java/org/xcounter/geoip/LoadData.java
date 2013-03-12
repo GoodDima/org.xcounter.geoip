@@ -25,7 +25,7 @@ abstract class LoadData
                 asnBlock = new ASNBlock();
                 asnBlock.setBegin(Long.parseLong(values[0]));
                 asnBlock.setEnd(Long.parseLong(values[1]));
-                asnBlock.setName(values[2]);
+                asnBlock.setName(Useful.trimChar(values[2], '"'));
                 GeoCollections.addToCollection(asnBlock);
 
             }
@@ -47,9 +47,12 @@ abstract class LoadData
                 values = strLine.split(",");
                 gl = new GeoLocation();
                 gl.setId(Integer.parseInt(values[0]));
-                gl.setName(values[3]);
+                gl.setCountry(Useful.trimChar(values[1], '"'));
+                gl.setRegion(Useful.trimChar(values[2], '"'));
+                gl.setName(Useful.trimChar(values[3], '"'));
+                gl.setPostcode(Useful.trimChar(values[4], '"'));
                 gl.setLat(Float.parseFloat(values[5]));
-                gl.setLon(Float.parseFloat(values[5]));
+                gl.setLon(Float.parseFloat(values[6]));
                 GeoCollections.addToCollection(gl);
             }
             in.close();

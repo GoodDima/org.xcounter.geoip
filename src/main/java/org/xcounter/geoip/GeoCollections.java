@@ -9,8 +9,8 @@ public class GeoCollections
 {
 
     private static HashMap<Integer, GeoLocation> locations = new HashMap<Integer, GeoLocation>();
-    private static SortedSet<GeoBlock> blocks = new TreeSet<GeoBlock>();
-    private static SortedSet<ASNBlock> asn_blocks = new TreeSet<ASNBlock>();
+    private static TreeSet<GeoBlock> blocks = new TreeSet<GeoBlock>();
+    private static TreeSet<ASNBlock> asn_blocks = new TreeSet<ASNBlock>();
 
     static void addToCollection(GeoLocation o)
     {
@@ -53,7 +53,7 @@ public class GeoCollections
         ASNBlock seed = new ASNBlock();
         seed.setBegin(ip);
 
-        SortedSet<ASNBlock> result = GeoCollections.asn_blocks.headSet(seed);
+        SortedSet<ASNBlock> result = GeoCollections.asn_blocks.headSet(seed, true);
         Iterator<ASNBlock> iterator = result.iterator();
 
         while (iterator.hasNext())

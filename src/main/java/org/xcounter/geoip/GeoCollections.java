@@ -72,7 +72,7 @@ public class GeoCollections
         GeoBlock seed = new GeoBlock();
         seed.setBegin(ip);
 
-        SortedSet<GeoBlock> result = GeoCollections.blocks.headSet(seed);
+        SortedSet<GeoBlock> result = GeoCollections.blocks.headSet(seed, true);
         Iterator<GeoBlock> iterator = result.iterator();
 
         while (iterator.hasNext())

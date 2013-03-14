@@ -2,27 +2,33 @@
 <script type="text/javascript">
 //AIzaSyBNP523J07pH9_UdKParFsqH_0_8JjKnhs
 var map;
-var lat = ${location.gps_lat};
-var lon = ${location.gps_lon};
 
 function initialize() {
-  var myLatlng = new google.maps.LatLng(lat,lon);
+  var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
   var mapOptions = {
     zoom: 8,
-    center: myLatlng,
+//    center: myLatlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
   map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-  
-  new google.maps.Marker({
-      position: myLatlng, 
-      map: map,
-      title: '${location.name}'
-  });
 }
 
 $(function() {
     initialize();
+    var markerBounds = new google.maps.LatLngBounds();
+    var point;
+    
+<#list list as point>
+point = new google.maps.LatLng( ${point.location.gps_lat}, ${point.location.gps_lon} );
+new google.maps.Marker({
+    position: point, 
+    map: map,
+    title: '${point.location.name}'
+});
+markerBounds.extend(point);
+</#list>  
+
+    map.fitBounds(markerBounds);
     $('#main_form').submit(function() {
         var q = $('#q').val();
         if (q.match('^[0-9\.]+$')){
@@ -34,7 +40,6 @@ $(function() {
     });
 });
 </script>
-
 <div id="sidebar_container">
   <div class="sidebar">
     <div class="sidebar_top"></div>
@@ -83,26 +88,22 @@ $(function() {
   <h1>Enter IP Address as X.X.X.X or integer variant of ip address</h1>
   <p>
       <form id="main_form" method="get" action="/">
-          <input id="q" class="search" value="${_id}" />
+          <input id="q" class="search" value="" />
       </form>
   </p>
-  
+
+<div id="map_canvas" style="width: 100%; height: 500px"></div>
+
+<#list list as point>
   <table style="width:100%; border-spacing:0;">
     <tr><th>Key</th><th>Value</th></tr>
-    <tr><td>IP</td><td>${_id}</td></tr>
-    <tr><td>Range</td><td>${range.from} - ${range.to}</td></tr>
-    <tr><td>ASN</td><td>${asn}</td></tr>
-    <tr><td>Location</td><td>${location.name} ${location.country} ${location.region} ${location.postcode}</td></tr>
+    <tr><td>IP</td><td>${point._id}</td></tr>
+    <tr><td>Range</td><td>${point.range.from} - ${point.range.to}</td></tr>
+    <tr><td>ASN</td><td>${point.asn}</td></tr>
+    <tr><td>Location</td><td>${point.location.name} ${point.location.country} ${point.location.region} ${point.location.postcode}</td></tr>
   </table>
-  
-  
-   <div id="map_canvas" style="width: 100%; height: 500px"></div>
-  
-  <ul>
-    <li>Internet Explorer 8</li>
-    <li>Internet Explorer 7</li>
-    <li>FireFox 3.5</li>
-    <li>Google Chrome 6</li>
-    <li>Safari 4</li>
-  </ul>
+</#list>  
+
+   
+
 </div>

@@ -5,6 +5,7 @@ import java.util.Locale;
 import org.xcounter.geoip.routes.ApiRoute;
 import org.xcounter.geoip.routes.IndexRoute;
 import org.xcounter.geoip.routes.JsonRoute;
+import org.xcounter.geoip.routes.LangApiRoute;
 import org.xcounter.geoip.routes.WhereisRoute;
 
 import spark.Spark;
@@ -22,6 +23,8 @@ public class GeoIP
         
         Locale.setDefault(Locale.US);
 
+        Spark.get(new LangApiRoute());
+        
         Spark.get(new JsonRoute()); //"/api/ip/:ip/json"
         
         Spark.get(new ApiRoute());  //"/api/ip/:ip"

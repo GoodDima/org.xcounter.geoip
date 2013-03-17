@@ -18,7 +18,7 @@ public class LangApiRoute extends UIRoute
     public LangApiRoute()
     {
         super("/example/:tag/");
-
+        this.current_menu = "/example/list/";
         {
             HashMap<String, String> template = new HashMap<String, String>();
             template.put("template", "examples/list.ftl");

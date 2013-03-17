@@ -1,4 +1,5 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="/js/send.js"></script>
 <script type="text/javascript">
 //AIzaSyBNP523J07pH9_UdKParFsqH_0_8JjKnhs
 var map;
@@ -29,15 +30,7 @@ markerBounds.extend(point);
 </#list>  
 
     map.fitBounds(markerBounds);
-    $('#main_form').submit(function() {
-        var q = $('#q').val();
-        if (q.match('^[0-9\.]+$')){
-            self.location = '/api/ip/' + q + '/';
-        }else{
-            self.location = '/api/whereis/' + q + '/';
-        }
-        return false;
-    });
+    $('#main_form').submit(send());
 });
 </script>
 <div id="sidebar_container">

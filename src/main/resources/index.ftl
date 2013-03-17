@@ -1,16 +1,10 @@
+<script src="/js/send.js"></script>
 <script type="text/javascript">
 
 $(function() {
-    initialize();
-    $('#main_form').submit(function() {
-        var q = $('#q').val();
-        if (q.match('^[0-9\.]+$')){
-            self.location = '/api/ip/' + q;
-        }else{
-            self.location = '/api/whereis/' + q;
-        }
-        return false;
-    });
+    $('#main_form').submit(
+    		//send()
+    		);
 });
 
 </script>
@@ -29,11 +23,4 @@ $(function() {
       </form>
   </p>
 
-  <ul>
-    <li>Internet Explorer 8</li>
-    <li>Internet Explorer 7</li>
-    <li>FireFox 3.5</li>
-    <li>Google Chrome 6</li>
-    <li>Safari 4</li>
-  </ul>
 </div>

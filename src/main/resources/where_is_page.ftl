@@ -47,7 +47,7 @@ markerBounds.extend(point);
   <p>
       <form id="main_form" method="get" action="/">
           <input id="q" class="search" value="${site}" />
-          <input type="submit" name="Find" />
+          <input type="submit" value="GeoLocate!" />
       </form>
   </p>
 

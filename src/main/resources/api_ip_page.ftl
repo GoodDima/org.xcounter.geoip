@@ -24,7 +24,9 @@ function initialize() {
 
 $(function() {
     initialize();
-    $('#main_form').submit(send());
+    $('#main_form').submit(function(){
+        return sendMainForm()
+    });
 });
 </script>
 
@@ -36,13 +38,16 @@ $(function() {
 
 <div id="content">
   <!-- insert the page content here -->
-  <h1>Enter IP Address as X.X.X.X or integer variant of ip address</h1>
+  <h1>Enter IP Address as X.X.X.X or integer variant of ip address or domain</h1>
   <p>
       <form id="main_form" method="get" action="/">
           <input id="q" class="search" value="${_id}" />
+          <input type="submit" name="Find" />
       </form>
   </p>
-  
+
+   <div id="map_canvas" style="width: 100%; height: 500px"></div>
+
   <table style="width:100%; border-spacing:0;">
     <tr><th>Key</th><th>Value</th></tr>
     <tr><td>IP</td><td>${_id}</td></tr>
@@ -50,15 +55,5 @@ $(function() {
     <tr><td>ASN</td><td>${asn}</td></tr>
     <tr><td>Location</td><td>${location.name} ${location.country} ${location.region} ${location.postcode}</td></tr>
   </table>
-  
-  
-   <div id="map_canvas" style="width: 100%; height: 500px"></div>
-  
-  <ul>
-    <li>Internet Explorer 8</li>
-    <li>Internet Explorer 7</li>
-    <li>FireFox 3.5</li>
-    <li>Google Chrome 6</li>
-    <li>Safari 4</li>
-  </ul>
+
 </div>

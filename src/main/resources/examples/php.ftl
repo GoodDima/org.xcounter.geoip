@@ -20,7 +20,7 @@ $(document).ready(function(){
 //---- Variant 1
 
 $ip = '8.8.8.8';
-$url = sprintf('http://geoip.xcounter.local/api/ip/%s/json', $ip);
+$url = sprintf('http://geoip.xcounter.org/api/ip/%s/json', $ip);
 $section = file_get_contents($url);
 $section = json_decode($section);
 var_dump($section);
@@ -33,7 +33,7 @@ var_dump($section);
 //---- Variant 2
 
 $ip = 134744072; // int value of 8.8.8.8
-$url = sprintf('http://geoip.xcounter.local/api/ip/%d/json', $ip);
+$url = sprintf('http://geoip.xcounter.org/api/ip/%d/json', $ip);
 $section = file_get_contents($url);
 $section = json_decode($section);
 var_dump($section);

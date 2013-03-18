@@ -3,6 +3,7 @@ package org.xcounter.geoip;
 import java.util.Locale;
 
 import org.xcounter.geoip.routes.ApiRoute;
+import org.xcounter.geoip.routes.CommonRoute;
 import org.xcounter.geoip.routes.IndexRoute;
 import org.xcounter.geoip.routes.JsonRoute;
 import org.xcounter.geoip.routes.LangApiRoute;
@@ -30,10 +31,10 @@ public class GeoIP
         Spark.get(new ApiRoute());  //"/api/ip/:ip"
         
         Spark.get(new WhereisRoute());  //"/api/whereis/:site"
-        
+
         Spark.get(new IndexRoute());  //"/"
 
-        
+        Spark.get(new CommonRoute());  //"/:route"
 
         
 

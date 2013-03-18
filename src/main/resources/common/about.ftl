@@ -25,4 +25,12 @@ $(function() {
       </form>
   </p>
 
+  <p>
+    <a href="/">geoip.xcounter.org</a> - is an open source ip geo location web service.<br />
+    The service is delivered "AS IS" without and warranties and conditions of usage.<br />
+    All comments and suggestions should be sent to good.dima[at]gmail.com.<br />
+    <br />
+    <i>Regards, Dmitry Gudkov</i>
+  </p>
+
 </div>

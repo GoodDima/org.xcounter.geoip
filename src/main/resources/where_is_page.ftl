@@ -30,7 +30,9 @@ markerBounds.extend(point);
 </#list>  
 
     map.fitBounds(markerBounds);
-    $('#main_form').submit(send());
+    $('#main_form').submit(function(){
+        return sendMainForm()
+    });
 });
 </script>
 <div id="sidebar_container">
@@ -41,10 +43,11 @@ markerBounds.extend(point);
 
 <div id="content">
   <!-- insert the page content here -->
-  <h1>Enter IP Address as X.X.X.X or integer variant of ip address</h1>
+  <h1>Enter IP Address as X.X.X.X or integer variant of ip address or domain</h1>
   <p>
       <form id="main_form" method="get" action="/">
           <input id="q" class="search" value="" />
+          <input type="submit" name="Find" />
       </form>
   </p>
 

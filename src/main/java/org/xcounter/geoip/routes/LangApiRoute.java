@@ -54,7 +54,6 @@ public class LangApiRoute extends UIRoute
             this.templates.put("ruby", template);
         }
 
-        
     }
 
     @Override

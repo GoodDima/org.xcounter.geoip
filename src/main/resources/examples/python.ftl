@@ -51,20 +51,20 @@ print simplejson.load(f)
 <pre><code class="json">
 
 {
-_id: 134744072,
-asn: "AS15169 Google Inc.",
-range: {
-    from: 134744064,
-    to: 134744319
-},
-location: {
-    name: "Mountain View",
-    country: "US",
-    region: "CA",
-    postcode: "94043",
-    gps_lat: 37.4192008972168,
-    gps_lon: -122.05740356445312
-}
+  "asn": "AS15169 Google Inc.",
+  "_id": 134744072,
+  "location": {
+    "region": "CA",
+    "name": "Mountain View",
+    "gps_lon": -122.057403564453,
+    "postcode": "94043",
+    "gps_lat": 37.4192008972168,
+    "country": "US"
+  },
+  "range": {
+    "to": 134744319,
+    "from": 134744064
+  }
 }
 
 </code></pre>

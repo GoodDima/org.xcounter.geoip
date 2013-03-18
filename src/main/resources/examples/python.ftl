@@ -32,6 +32,7 @@ print simplejson.load(f)
 
 <h2>Simple variant using integer notation of ip address</h2>
 <pre><code class="python">
+
 //---- Variant 2
 
 import urllib2
@@ -43,6 +44,7 @@ f = opener.open(req)
 print simplejson.load(f)
 
 //---- Variant 2 End
+
 </code></pre>
 
 <h2>Output for both variants</h2>
@@ -52,16 +54,16 @@ print simplejson.load(f)
 _id: 134744072,
 asn: "AS15169 Google Inc.",
 range: {
-from: 134744064,
-to: 134744319
+    from: 134744064,
+    to: 134744319
 },
 location: {
-name: "Mountain View",
-country: "US",
-region: "CA",
-postcode: "94043",
-gps_lat: 37.4192008972168,
-gps_lon: -122.05740356445312
+    name: "Mountain View",
+    country: "US",
+    region: "CA",
+    postcode: "94043",
+    gps_lat: 37.4192008972168,
+    gps_lon: -122.05740356445312
 }
 }
 

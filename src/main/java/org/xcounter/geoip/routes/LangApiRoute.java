@@ -45,6 +45,16 @@ public class LangApiRoute extends UIRoute
             this.templates.put("python", template);
         }
 
+        {
+            HashMap<String, String> template = new HashMap<String, String>();
+            template.put("template", "examples/ruby.ftl");
+            template.put("title", "Ruby GeoIP Api for software development free");
+            template.put("keywords", "Ruby GeoIP Api for software development free");
+            template.put("description", "Ruby GeoIP Api for software development free");
+            this.templates.put("ruby", template);
+        }
+
+        
     }
 
     @Override

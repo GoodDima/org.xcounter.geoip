@@ -57,6 +57,7 @@ public class WhereisRoute extends UIRoute{
                 }
             }
             values.put("list", responce);
+            values.put("site", site);
             template.process(values, sw);
 
             return renderLayout(sw.toString());

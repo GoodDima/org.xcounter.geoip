@@ -46,7 +46,7 @@ markerBounds.extend(point);
   <h1>Enter IP Address as X.X.X.X or integer variant of ip address or domain</h1>
   <p>
       <form id="main_form" method="get" action="/">
-          <input id="q" class="search" value="" />
+          <input id="q" class="search" value="${site}" />
           <input type="submit" name="Find" />
       </form>
   </p>

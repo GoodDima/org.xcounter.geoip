@@ -10,6 +10,8 @@ $(document).ready(function(){
 <div id="sidebar_container">
 
   <#include "/widget/sites.ftl" parse=false>
+  
+  <#include "/widget/lasten.ftl" parse=true>
 
 </div>
 

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
 
+import org.xcounter.geoip.CacheMongo;
+
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import spark.Request;
@@ -28,7 +30,10 @@ public class CommonRoute extends UIRoute
             Template template = this.ftl_configuration.getTemplate("common/" + route + ".ftl");
             StringWriter sw = new StringWriter();
 
-            template.process(null, sw);
+            HashMap valuesMap = new HashMap();
+            valuesMap.put("lasten", CacheMongo.getLasten());
+            
+            template.process(valuesMap, sw);
             return renderLayout(sw.toString());
 
         }catch (TemplateException e) {

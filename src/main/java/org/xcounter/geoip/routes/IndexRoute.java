@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
 
+import org.xcounter.geoip.CacheMongo;
+
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import spark.Request;
@@ -24,7 +26,7 @@ public class IndexRoute extends UIRoute
             StringWriter sw = new StringWriter();
 
             HashMap valuesMap = new HashMap();
-//            valuesMap.put("content", content);
+            valuesMap.put("lasten", CacheMongo.getLasten());
 
             template.process(valuesMap, sw);
             return renderLayout(sw.toString());

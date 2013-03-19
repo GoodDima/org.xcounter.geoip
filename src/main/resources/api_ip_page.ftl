@@ -34,6 +34,8 @@ $(function() {
 
 <#include "/widget/sites.ftl" parse=false>
 
+<#include "/widget/lasten.ftl" parse=true>
+
 </div>
 
 <div id="content">

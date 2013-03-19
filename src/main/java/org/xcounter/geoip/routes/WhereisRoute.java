@@ -58,6 +58,7 @@ public class WhereisRoute extends UIRoute{
             }
             values.put("list", responce);
             values.put("site", site);
+            values.put("lasten", CacheMongo.getLasten());
             template.process(values, sw);
 
             return renderLayout(sw.toString());

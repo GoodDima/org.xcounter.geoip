@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
 
+import org.xcounter.geoip.CacheMongo;
+
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
@@ -74,7 +76,10 @@ public class LangApiRoute extends UIRoute
             Template template = this.ftl_configuration.getTemplate(tpl.get("template"));
             StringWriter sw = new StringWriter();
 
-            template.process(null, sw);
+            HashMap valuesMap = new HashMap();
+            valuesMap.put("lasten", CacheMongo.getLasten());
+
+            template.process(valuesMap, sw);
             return renderLayout(sw.toString());
 
 

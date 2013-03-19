@@ -45,6 +45,8 @@ public class ApiRoute extends UIRoute
 
             data.put("range", range);
 
+            data.put("lasten", CacheMongo.getLasten());
+            
             template.process(data, sw);
 
             return renderLayout(sw.toString());

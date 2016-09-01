@@ -64,13 +64,12 @@ public class WhereisRoute extends UIRoute{
             return renderLayout(sw.toString());
 
             
-        } catch (UnknownHostException e)
-        {
-            halt(500);
+        } catch (UnknownHostException e) {
+//            halt(500);
         }catch (TemplateException e) {
-            halt(500);
+//            halt(500);
         }catch (IOException e) {
-            halt(500);
+//            halt(500);
         }
 
         

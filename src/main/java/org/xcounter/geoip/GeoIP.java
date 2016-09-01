@@ -21,7 +21,6 @@ public class GeoIP
     {
 
         LoadData.loadData();
-        
         Locale.setDefault(Locale.US);
 
         Spark.get(new LangApiRoute());

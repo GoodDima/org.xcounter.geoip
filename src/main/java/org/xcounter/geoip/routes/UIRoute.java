@@ -8,11 +8,14 @@ import java.util.LinkedList;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
+import spark.HaltException;
 import spark.Route;
+import spark.RouteImpl;
 
-public abstract class UIRoute extends Route
+public abstract class UIRoute extends RouteImpl
 {
-    protected Configuration ftl_configuration = new Configuration();
+    @SuppressWarnings("deprecation")
+	protected Configuration ftl_configuration = new Configuration();
     protected String title = "IP Geolocation free api",
             description = "",
             keywords = "ip geolocation, geoip information, geoip api php, geoip api python, geoip api ruby, geoip api java";
@@ -65,10 +68,10 @@ public abstract class UIRoute extends Route
             return sw;
         } catch (TemplateException e)
         {
-            halt(500);
+//            new HaltException(500);
         } catch (IOException e)
         {
-            halt(500);
+//            halt(500);
         }
 
         return null;

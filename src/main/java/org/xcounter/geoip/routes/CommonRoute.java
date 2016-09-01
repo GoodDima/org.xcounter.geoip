@@ -19,7 +19,6 @@ public class CommonRoute extends UIRoute
         super("/:route/");
     }
 
-    @Override
     public Object handle(Request arg0, Response arg1)
     {
         try{
@@ -37,9 +36,9 @@ public class CommonRoute extends UIRoute
             return renderLayout(sw.toString());
 
         }catch (TemplateException e) {
-            halt(500);
+//            halt(500);
         }catch (IOException e) {
-            halt(500);
+//            halt(500);
         }
         return null;
     }

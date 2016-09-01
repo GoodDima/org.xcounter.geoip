@@ -52,9 +52,9 @@ public class ApiRoute extends UIRoute
             return renderLayout(sw.toString());
 
         }catch (TemplateException e) {
-            halt(500);
+//            halt(500);
         }catch (IOException e) {
-            halt(500);
+//            halt(500);
         }
         return null;
 

@@ -6,8 +6,9 @@ import org.xcounter.geoip.Useful;
 import spark.Request;
 import spark.Response;
 import spark.Route;
+import spark.RouteImpl;
 
-public class JsonRoute extends Route
+public class JsonRoute extends RouteImpl
 {
 
     public JsonRoute(){
